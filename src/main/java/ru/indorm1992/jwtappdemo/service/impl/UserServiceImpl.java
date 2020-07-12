@@ -1,4 +1,4 @@
-package ru.indorm1992.jwtappdemo.security.impl;
+package ru.indorm1992.jwtappdemo.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +9,7 @@ import ru.indorm1992.jwtappdemo.model.Status;
 import ru.indorm1992.jwtappdemo.model.User;
 import ru.indorm1992.jwtappdemo.repository.RoleRepository;
 import ru.indorm1992.jwtappdemo.repository.UserRepository;
-import ru.indorm1992.jwtappdemo.security.UserService;
+import ru.indorm1992.jwtappdemo.service.UserService;
 
 import java.util.ArrayList;
 import java.util.List;

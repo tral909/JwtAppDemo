@@ -1,4 +1,4 @@
-package ru.indorm1992.jwtappdemo.security;
+package ru.indorm1992.jwtappdemo.service;
 
 import ru.indorm1992.jwtappdemo.model.User;
 
