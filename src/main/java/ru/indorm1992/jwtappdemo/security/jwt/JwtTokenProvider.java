@@ -26,9 +26,9 @@ import java.util.List;
 @Component
 public class JwtTokenProvider {
 
-	@Value("${jwt.app.secret}")
+	@Value("${jwt.token.secret}")
 	private String secret;
-	@Value("${jwt.app.expired}")
+	@Value("${jwt.token.expired}")
 	private long validityInMilliseconds;
 
 	@Autowired

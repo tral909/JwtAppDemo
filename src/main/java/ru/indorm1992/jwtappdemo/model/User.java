@@ -1,6 +1,7 @@
 package ru.indorm1992.jwtappdemo.model;
 
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,6 +15,7 @@ import java.util.List;
 @Entity
 @Table(name = "users")
 @Data
+@ToString(callSuper = true, exclude = {"roles", "password"})
 public class User extends BaseEntity {
 	@Column(nullable = false)
 	private String username;
