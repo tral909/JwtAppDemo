@@ -20,3 +20,6 @@ INSERT INTO user_roles VALUES (1, 1), (1, 2);
 ```
 
 Получить токен можно отправив запрос `POST http://loaclhost:8085/api/v1/auth/login` c телом `{"username": "tony", "password": "test"}`
+
+Запросить информацию по пользователю `GET http://localhost:8085/api/v1/admin/users/1` c хедером `Authentication: Bearer_{jwtToken}`
+
