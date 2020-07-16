@@ -7,30 +7,29 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.indorm1992.jwtappdemo.dto.AdminUserDto;
+import ru.indorm1992.jwtappdemo.dto.UserDto;
 import ru.indorm1992.jwtappdemo.model.User;
 import ru.indorm1992.jwtappdemo.service.UserService;
 
 @RestController
-@RequestMapping("api/v1/admin")
-public class AdminRestControllerV1 {
-
+@RequestMapping("api/v1/users")
+public class UserRestControllerV1 {
 	private final UserService userService;
 
 	@Autowired
-	public AdminRestControllerV1(UserService userService) {
+	public UserRestControllerV1(UserService userService) {
 		this.userService = userService;
 	}
 
-	@GetMapping("users/{id}")
-	public ResponseEntity<AdminUserDto> getUserById(@PathVariable("id") Long id) {
+	@GetMapping("{id}")
+	public ResponseEntity<UserDto> getUserById(@PathVariable("id") Long id){
 		User user = userService.findById(id);
 
-		if (user == null) {
+		if(user == null){
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 
-		AdminUserDto result = AdminUserDto.fromUser(user);
+		UserDto result = UserDto.fromUser(user);
 
 		return new ResponseEntity<>(result, HttpStatus.OK);
 	}
